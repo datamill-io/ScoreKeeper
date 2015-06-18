@@ -8,15 +8,16 @@ import javax.sql.DataSource;
 import scorekeeper.Metric;
 
 import com.timgroup.statsd.StatsDClient;
+import scorekeeper.MetricsEnvironmentSetupMessage;
 
 public class AutomaticSQLMetricsActor extends SQLMetricsActor {
-	AutomaticSQLMetricsActor(DataSource sqlDataSource, StatsDClient statsD,
+	AutomaticSQLMetricsActor(MetricsEnvironmentSetupMessage setupMessage, DataSource sqlDataSource, StatsDClient statsD,
 			Metric metric) throws SQLException {
-		super(sqlDataSource, statsD, metric);
+		super(setupMessage, sqlDataSource, statsD, metric);
 	}
 	
 	protected void doTheWholeMetricsThing() throws SQLException {
-		ResultSet rs = getStatement().executeQuery();
+		ResultSet rs = executeStatement();
 		rs.next();
 		
 		int i = 0;
