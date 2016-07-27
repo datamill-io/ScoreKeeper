@@ -1,3 +1,6 @@
+# THIS PROJECT IS DEPRECATED
+ScoreKeeper is no longer maintained, and **this** repository will be removed from GitHub on or after Thursday, January 26, 2017. 
+
 # ScoreKeeper [![Build Status](https://travis-ci.org/commercehub-oss/ScoreKeeper.svg?branch=master)](https://travis-ci.org/commercehub-oss/ScoreKeeper)
 ## *A polling agent for non-invasively extracting metrics and shipping them off to Statsd/Graphite*
 
